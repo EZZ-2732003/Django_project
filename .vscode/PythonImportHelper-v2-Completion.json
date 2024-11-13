@@ -17,6 +17,30 @@
         "documentation": {}
     },
     {
+        "label": "*",
+        "importPath": "settings",
+        "description": "settings",
+        "isExtraImport": true,
+        "detail": "settings",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "importPath": "main_crm.settings",
+        "description": "main_crm.settings",
+        "isExtraImport": true,
+        "detail": "main_crm.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEBUG",
+        "importPath": "main_crm.settings",
+        "description": "main_crm.settings",
+        "isExtraImport": true,
+        "detail": "main_crm.settings",
+        "documentation": {}
+    },
+    {
         "label": "Path",
         "importPath": "pathlib",
         "description": "pathlib",
@@ -1201,6 +1225,60 @@
         "documentation": {}
     },
     {
+        "label": "DEBUG",
+        "kind": 5,
+        "importPath": "main_crm.deployment",
+        "description": "main_crm.deployment",
+        "peekOfCode": "DEBUG = False\nMIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'whitenoise.middleware.WhiteNoiseMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',",
+        "detail": "main_crm.deployment",
+        "documentation": {}
+    },
+    {
+        "label": "MIDDLEWARE",
+        "kind": 5,
+        "importPath": "main_crm.deployment",
+        "description": "main_crm.deployment",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'whitenoise.middleware.WhiteNoiseMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]",
+        "detail": "main_crm.deployment",
+        "documentation": {}
+    },
+    {
+        "label": "STATICFILES_STORAGE",
+        "kind": 5,
+        "importPath": "main_crm.deployment",
+        "description": "main_crm.deployment",
+        "peekOfCode": "STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'\nSTATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')\nConnection_string = os.environ['AZURE_POSTGRESQL_CONNECTIONSTRING']\nparameters = {pair.split('='):pair.split('=')[1] for pair in Connection_string.split('')}\nDATABASES ={\n    'default':{\n        'ENGINE': 'django.db.backends.postgresql',\n        'NAME': parameters['dbname'],\n        'HOST':parameters['host'],\n        'USER':parameters['user'],",
+        "detail": "main_crm.deployment",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_ROOT",
+        "kind": 5,
+        "importPath": "main_crm.deployment",
+        "description": "main_crm.deployment",
+        "peekOfCode": "STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')\nConnection_string = os.environ['AZURE_POSTGRESQL_CONNECTIONSTRING']\nparameters = {pair.split('='):pair.split('=')[1] for pair in Connection_string.split('')}\nDATABASES ={\n    'default':{\n        'ENGINE': 'django.db.backends.postgresql',\n        'NAME': parameters['dbname'],\n        'HOST':parameters['host'],\n        'USER':parameters['user'],\n        'PASSWORD':parameters['password'],",
+        "detail": "main_crm.deployment",
+        "documentation": {}
+    },
+    {
+        "label": "Connection_string",
+        "kind": 5,
+        "importPath": "main_crm.deployment",
+        "description": "main_crm.deployment",
+        "peekOfCode": "Connection_string = os.environ['AZURE_POSTGRESQL_CONNECTIONSTRING']\nparameters = {pair.split('='):pair.split('=')[1] for pair in Connection_string.split('')}\nDATABASES ={\n    'default':{\n        'ENGINE': 'django.db.backends.postgresql',\n        'NAME': parameters['dbname'],\n        'HOST':parameters['host'],\n        'USER':parameters['user'],\n        'PASSWORD':parameters['password'],\n    }",
+        "detail": "main_crm.deployment",
+        "documentation": {}
+    },
+    {
+        "label": "parameters",
+        "kind": 5,
+        "importPath": "main_crm.deployment",
+        "description": "main_crm.deployment",
+        "peekOfCode": "parameters = {pair.split('='):pair.split('=')[1] for pair in Connection_string.split('')}\nDATABASES ={\n    'default':{\n        'ENGINE': 'django.db.backends.postgresql',\n        'NAME': parameters['dbname'],\n        'HOST':parameters['host'],\n        'USER':parameters['user'],\n        'PASSWORD':parameters['password'],\n    }\n}",
+        "detail": "main_crm.deployment",
+        "documentation": {}
+    },
+    {
         "label": "BASE_DIR",
         "kind": 5,
         "importPath": "main_crm.settings",
@@ -1387,6 +1465,15 @@
         "description": "main_crm.urls",
         "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('',include('webapp.urls') )\n]",
         "detail": "main_crm.urls",
+        "documentation": {}
+    },
+    {
+        "label": "settings_module",
+        "kind": 5,
+        "importPath": "main_crm.wsgi",
+        "description": "main_crm.wsgi",
+        "peekOfCode": "settings_module = 'main_crm.deployment' if 'WEBSITE_HOSTNAME' in os.environ else 'main_crm.settings'\nos.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)\napplication = get_wsgi_application()",
+        "detail": "main_crm.wsgi",
         "documentation": {}
     },
     {
