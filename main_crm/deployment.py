@@ -3,6 +3,7 @@ import os
 from settings import *
 from main_crm.settings import BASE_DIR, DEBUG
 from.settings import BASE_DIR
+SECRET_KEY = os.environ['SECRET']
 
 ALLOWED_HOSTS =[os.environ['WEBSITE_HOSTNAME']]
 
@@ -21,6 +22,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
