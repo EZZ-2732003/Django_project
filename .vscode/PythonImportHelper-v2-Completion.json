@@ -1229,7 +1229,7 @@
         "kind": 5,
         "importPath": "main_crm.deployment",
         "description": "main_crm.deployment",
-        "peekOfCode": "SECRET_KEY = 'django-insecure-if1@0&*6+mmz0qs2$dxk^53q__d*9$6q(70id#e(f3*xjx&&#o'\nALLOWED_HOSTS =[os.environ['WEBSITE_HOSTNAME']]\nCSRF_TRUSTED_ORIGINS=['https://'+os.environ['WEBSITE_HOSTNAME']]\nDEBUG = False\nMIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'whitenoise.middleware.WhiteNoiseMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',",
+        "peekOfCode": "SECRET_KEY = os.environ['SECRET']\nALLOWED_HOSTS =[os.environ['WEBSITE_HOSTNAME']]\nCSRF_TRUSTED_ORIGINS=['https://'+os.environ['WEBSITE_HOSTNAME']]\nDEBUG = False\nMIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'whitenoise.middleware.WhiteNoiseMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',",
         "detail": "main_crm.deployment",
         "documentation": {}
     },
